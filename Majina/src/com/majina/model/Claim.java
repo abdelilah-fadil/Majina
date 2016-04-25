@@ -7,7 +7,7 @@ public class Claim {
 	private String claim;
 	private Date dateClaim;
 	private String reply;
-	private User user;
+	private Client client;
 	private Product produit;
 
 	public Claim() {
@@ -15,13 +15,13 @@ public class Claim {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Claim(Integer idClaim, String claim, Date dateClaim, String reply, User user, Product produit) {
+	public Claim(Integer idClaim, String claim, Date dateClaim, String reply, Client client, Product produit) {
 		super();
 		this.idClaim = idClaim;
 		this.claim = claim;
 		this.dateClaim = dateClaim;
 		this.reply = reply;
-		this.user = user;
+		this.client = client;
 		this.produit = produit;
 	}
 
@@ -57,12 +57,12 @@ public class Claim {
 		this.reply = reply;
 	}
 
-	public User getUser() {
-		return user;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setClient(Client user) {
+		this.client = user;
 	}
 
 	public Product getProduit() {
@@ -76,7 +76,7 @@ public class Claim {
 	@Override
 	public String toString() {
 		return "Claim [idClaim=" + idClaim + ", claim=" + claim + ", dateClaim=" + dateClaim + ", reply=" + reply
-				+ ", user=" + user + ", produit=" + produit + "]";
+				+ ", user=" + client + ", produit=" + produit + "]";
 	}
 
 }

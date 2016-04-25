@@ -2,19 +2,20 @@ package com.majina.model;
 
 import java.sql.Date;
 
-public class Research {
+import javax.persistence.OneToMany;
+
+public class UserResearch {
 
 	private Integer idResearch;
 	private String researchValue;
 	private Date dateResearch;
 	private User user;
 
-	public Research() {
+	public UserResearch() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Research(Integer idResearch, String researchValue, Date dateResearch, User user) {
+	public UserResearch(Integer idResearch, String researchValue, Date dateResearch, User user) {
 		super();
 		this.idResearch = idResearch;
 		this.researchValue = researchValue;
@@ -46,6 +47,7 @@ public class Research {
 		this.dateResearch = dateResearch;
 	}
 
+	@OneToMany
 	public User getUser() {
 		return user;
 	}

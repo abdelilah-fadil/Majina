@@ -1,23 +1,25 @@
 package com.majina.model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Tag {
 
 	private Integer idTag;
 	private String tag;
 	private Date dateCrea;
+	private List<Product> products;
 
-	public Tag() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Tag(Integer idTag, String tag, Date dateCrea) {
+	public Tag(Integer idTag, String tag, Date dateCrea, List<Product> products) {
 		super();
 		this.idTag = idTag;
 		this.tag = tag;
 		this.dateCrea = dateCrea;
+		this.products = products;
+	}
+
+	public Tag() {
+		super();
 	}
 
 	public Integer getIdTag() {
@@ -42,6 +44,14 @@ public class Tag {
 
 	public void setDateCrea(Date dateCrea) {
 		this.dateCrea = dateCrea;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	@Override

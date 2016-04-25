@@ -2,22 +2,25 @@ package com.majina.model;
 
 import java.sql.Date;
 
+import javax.persistence.OneToMany;
+
 public class Feedback {
 
 	private Integer idFeedback;
 	private String feedback;
 	private Date dateFeedback;
+	private User user;
 
 	public Feedback() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Feedback(Integer idFeedback, String feedback, Date dateFeedback) {
+	public Feedback(Integer idFeedback, String feedback, Date dateFeedback, User user) {
 		super();
 		this.idFeedback = idFeedback;
 		this.feedback = feedback;
 		this.dateFeedback = dateFeedback;
+		this.user = user;
 	}
 
 	public Integer getIdFeedback() {
@@ -42,6 +45,15 @@ public class Feedback {
 
 	public void setDateFeedback(Date dateFeedback) {
 		this.dateFeedback = dateFeedback;
+	}
+
+	@OneToMany
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override

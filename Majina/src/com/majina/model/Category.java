@@ -3,15 +3,25 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
-public class Categorie {
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Category {
 	private Integer idCategorie;
 	private String categorie;
 	private Date dateCrea;
 	private Date dateUp;
-	private Categorie categorieM;
+	private Category categorieM;
 	private List<Product> products;
 
-	public Categorie(Integer idCategorie, String categorie, Date dateCrea, Date dateUp, Categorie categorieM,
+	public Category(Integer idCategorie, String categorie, Date dateCrea, Date dateUp, Category categorieM,
 			List<Product> products) {
 		super();
 		this.idCategorie = idCategorie;
@@ -22,10 +32,12 @@ public class Categorie {
 		this.products = products;
 	}
 
-	public Categorie() {
+	public Category() {
 		super();
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdCategorie() {
 		return idCategorie;
 	}
@@ -58,14 +70,17 @@ public class Categorie {
 		this.dateUp = dateUp;
 	}
 
-	public Categorie getCategorieM() {
+	@OneToOne
+	@JoinColumn(name = "CATEGORIE_MERE")
+	public Category getCategorieM() {
 		return categorieM;
 	}
 
-	public void setCategorieM(Categorie categorieM) {
+	public void setCategorieM(Category categorieM) {
 		this.categorieM = categorieM;
 	}
 
+	@ManyToOne(cascade = CascadeType.MERGE)
 	public List<Product> getProducts() {
 		return products;
 	}

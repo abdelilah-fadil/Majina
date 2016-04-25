@@ -3,6 +3,14 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class User {
 
 	private Integer idUser;
@@ -13,7 +21,7 @@ public class User {
 	private String sexe;
 	private String email;
 	private String pwd;
-	private String role;
+	private String defaultRole;
 	private Date dateRegistration;
 	private String adress_1;
 	private String adress_2;
@@ -24,15 +32,12 @@ public class User {
 	private Language defaultLanguage;
 	private List<Feedback> feedbacks;
 	private List<LoginHist> loginHistories;
-	private List<Research> researches;
-	private List<Media> medias;
-	private List<Claim> claims;
+	private List<UserResearch> researches;
 
 	public User(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday, String sexe,
 			String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
 			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<Research> researches, List<Media> medias,
-			List<Claim> claims) {
+			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches) {
 		super();
 		this.idUser = idUser;
 		this.fisrtName = fisrtName;
@@ -42,7 +47,7 @@ public class User {
 		this.sexe = sexe;
 		this.email = email;
 		this.pwd = pwd;
-		this.role = role;
+		this.defaultRole = role;
 		this.dateRegistration = dateRegistration;
 		this.adress_1 = adress_1;
 		this.adress_2 = adress_2;
@@ -54,15 +59,14 @@ public class User {
 		this.feedbacks = feedbacks;
 		this.loginHistories = loginHistories;
 		this.researches = researches;
-		this.medias = medias;
-		this.claims = claims;
 	}
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdUser() {
 		return idUser;
 	}
@@ -128,11 +132,11 @@ public class User {
 	}
 
 	public String getRole() {
-		return role;
+		return defaultRole;
 	}
 
 	public void setRole(String role) {
-		this.role = role;
+		this.defaultRole = role;
 	}
 
 	public Date getDateRegistration() {
@@ -183,6 +187,7 @@ public class User {
 		this.telephoneMobile = telephoneMobile;
 	}
 
+	@OneToMany
 	public City getCity() {
 		return city;
 	}
@@ -191,6 +196,7 @@ public class User {
 		this.city = city;
 	}
 
+	@OneToOne
 	public Language getDefaultLanguage() {
 		return defaultLanguage;
 	}
@@ -199,6 +205,7 @@ public class User {
 		this.defaultLanguage = defaultLanguage;
 	}
 
+	@OneToMany
 	public List<Feedback> getFeedbacks() {
 		return feedbacks;
 	}
@@ -207,6 +214,7 @@ public class User {
 		this.feedbacks = feedbacks;
 	}
 
+	@OneToMany
 	public List<LoginHist> getLoginHistories() {
 		return loginHistories;
 	}
@@ -215,39 +223,24 @@ public class User {
 		this.loginHistories = loginHistories;
 	}
 
-	public List<Research> getResearches() {
+	@OneToMany
+	public List<UserResearch> getResearches() {
 		return researches;
 	}
 
-	public void setResearches(List<Research> researches) {
+	public void setResearches(List<UserResearch> researches) {
 		this.researches = researches;
-	}
-
-	public List<Media> getMedias() {
-		return medias;
-	}
-
-	public void setMedias(List<Media> medias) {
-		this.medias = medias;
-	}
-
-	public List<Claim> getClaims() {
-		return claims;
-	}
-
-	public void setClaims(List<Claim> claims) {
-		this.claims = claims;
 	}
 
 	@Override
 	public String toString() {
 		return "User [idUser=" + idUser + ", fisrtName=" + fisrtName + ", middleName=" + middleName + ", lastName="
 				+ lastName + ", birthday=" + birthday + ", sexe=" + sexe + ", email=" + email + ", pwd=" + pwd
-				+ ", role=" + role + ", dateRegistration=" + dateRegistration + ", adress_1=" + adress_1 + ", adress_2="
-				+ adress_2 + ", zipcode=" + zipcode + ", telephoneFixe=" + telephoneFixe + ", telephoneMobile="
-				+ telephoneMobile + ", city=" + city + ", defaultLanguage=" + defaultLanguage + ", feedbacks="
-				+ feedbacks + ", loginHistories=" + loginHistories + ", researches=" + researches + ", medias=" + medias
-				+ ", claims=" + claims + "]";
+				+ ", role=" + defaultRole + ", dateRegistration=" + dateRegistration + ", adress_1=" + adress_1
+				+ ", adress_2=" + adress_2 + ", zipcode=" + zipcode + ", telephoneFixe=" + telephoneFixe
+				+ ", telephoneMobile=" + telephoneMobile + ", city=" + city + ", defaultLanguage=" + defaultLanguage
+				+ ", feedbacks=" + feedbacks + ", loginHistories=" + loginHistories + ", researches=" + researches
+				+ "]";
 	}
 
 }

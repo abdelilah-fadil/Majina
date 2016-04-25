@@ -12,7 +12,6 @@ public class Promotion {
 
 	public Promotion() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Promotion(Integer idPromotion, String libPromo, String codePromo, Date dateCrea, Date dateUp) {

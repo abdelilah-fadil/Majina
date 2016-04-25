@@ -1,20 +1,25 @@
 package com.majina.model;
 
+import java.util.List;
+
 public class Zone {
 
 	private Integer idZone;
 	private String zone;
+	private List<Country> countries;
 
 	public Zone() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Zone(Integer idZone, String zone) {
+	public Zone(Integer idZone, String zone, List<Country> countries) {
 		super();
 		this.idZone = idZone;
 		this.zone = zone;
+		this.countries = countries;
 	}
+
+
 
 	public Integer getIdZone() {
 		return idZone;
@@ -30,6 +35,14 @@ public class Zone {
 
 	public void setZone(String zone) {
 		this.zone = zone;
+	}
+
+	public List<Country> getCountries() {
+		return countries;
+	}
+
+	public void setCountries(List<Country> countries) {
+		this.countries = countries;
 	}
 
 	@Override

@@ -1,16 +1,16 @@
 package com.majina.model;
 
-public class CommandeDetails {
+public class CommandeLigne {
 	private Integer quantity;
 	private Commande commande;
 	private Product product;
 
-	public CommandeDetails() {
+	public CommandeLigne() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public CommandeDetails(Integer quantity, Commande commande, Product product) {
+	public CommandeLigne(Integer quantity, Commande commande, Product product) {
 		super();
 		this.quantity = quantity;
 		this.commande = commande;

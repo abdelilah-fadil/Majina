@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">WQA12zsx</property>
+		<property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/majina</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.default_schema">majina</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<mapping class="com.majina.model.Admin"/>
+		<mapping class="com.majina.model.Bill"/>
+		<mapping class="com.majina.model.Category"/>
+		<mapping class="com.majina.model.City"/>
+		<mapping class="com.majina.model.Claim"/>
+		<mapping class="com.majina.model.Client"/>
+		<mapping class="com.majina.model.Commande"/>
+		<mapping class="com.majina.model.CommandeDetails"/>
+		<mapping class="com.majina.model.Country"/>
+		<mapping class="com.majina.model.Feedback"/>
+		<mapping class="com.majina.model.Group"/>
+		<mapping class="com.majina.model.Language"/>
+		<mapping class="com.majina.model.LoginHist"/>
+		<mapping class="com.majina.model.Media"/>
+		<mapping class="com.majina.model.Moderator"/>
+		<mapping class="com.majina.model.Payement"/>
+		<mapping class="com.majina.model.Product"/>
+		<mapping class="com.majina.model.ProductTag"/>
+		<mapping class="com.majina.model.Promote"/>
+		<mapping class="com.majina.model.Promotion"/>
+		<mapping class="com.majina.model.Research"/>
+		<mapping class="com.majina.model.Seller"/>
+		<mapping class="com.majina.model.Shipper"/>
+		<mapping class="com.majina.model.Shippment"/>
+		<mapping class="com.majina.model.State"/>
+		<mapping class="com.majina.model.Store"/>
+		<mapping class="com.majina.model.StoreManager"/>
+		<mapping class="com.majina.model.Tag"/>
+		<mapping class="com.majina.model.TVA"/>
+		<mapping class="com.majina.model.User"/>
+		<mapping class="com.majina.model.Zone"/>
+	</session-factory>
+</hibernate-configuration>

@@ -15,7 +15,6 @@ public class Store {
 
 	public Store() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Store(Integer idStore, String storeName, Date dateCrea, Date dateUp, List<Seller> sellers,

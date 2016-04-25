@@ -12,7 +12,6 @@ public class Country {
 
 	public Country() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Country(Integer idCountry, String country, String countryCode, Currency currency, Zone zone) {

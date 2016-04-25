@@ -1,27 +1,36 @@
 package com.majina.model;
 
+import java.util.List;
 import java.util.TimeZone;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class City {
 
 	private Integer idCity;
 	private String city;
 	private TimeZone timeZone;
-	private State state;
+	private Country country;
+	private List<User> users;
 
-	public City(Integer idCity, String city, TimeZone timeZone, State state) {
+	public City(Integer idCity, String city, TimeZone timeZone, Country country, List<User> users) {
 		super();
 		this.idCity = idCity;
 		this.city = city;
 		this.timeZone = timeZone;
-		this.state = state;
+		this.country = country;
+		this.users = users;
 	}
 
 	public City() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdCity() {
 		return idCity;
 	}
@@ -46,17 +55,26 @@ public class City {
 		this.timeZone = timeZone;
 	}
 
-	public State getState() {
-		return state;
+	public Country getCountry() {
+		return country;
 	}
 
-	public void setState(State state) {
-		this.state = state;
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+
+	@OneToMany
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 	@Override
 	public String toString() {
-		return "City [idCity=" + idCity + ", city=" + city + ", timeZone=" + timeZone + ", state=" + state + "]";
+		return "City [idCity=" + idCity + ", city=" + city + ", timeZone=" + timeZone + ", Country=" + country + "]";
 	}
 
 }

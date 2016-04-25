@@ -1,6 +1,10 @@
 package com.majina.model;
 
 import java.sql.Date;
+import java.util.List;
+
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 public class Commande {
 
@@ -8,18 +12,22 @@ public class Commande {
 	private Date dateCmd;
 	private String status;
 	private Client client;
+	private Bill bill;
+	private List<CommandeLigne> commandeLignes;
 
 	public Commande() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Commande(Integer idCommande, Date dateCmd, String status, Client client) {
+	public Commande(Integer idCommande, Date dateCmd, String status, Client client, Bill bill,
+			List<CommandeLigne> commandeLignes) {
 		super();
 		this.idCommande = idCommande;
 		this.dateCmd = dateCmd;
 		this.status = status;
 		this.client = client;
+		this.bill = bill;
+		this.commandeLignes = commandeLignes;
 	}
 
 	public Integer getIdCommande() {
@@ -52,6 +60,24 @@ public class Commande {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	@OneToOne
+	public Bill getBill() {
+		return bill;
+	}
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
+	}
+
+	@OneToMany
+	public List<CommandeLigne> getCommandeLignes() {
+		return commandeLignes;
+	}
+
+	public void setCommandeLignes(List<CommandeLigne> commandeLignes) {
+		this.commandeLignes = commandeLignes;
 	}
 
 	@Override

@@ -1,25 +1,26 @@
 package com.majina.model;
 
+import java.util.List;
+
+import javax.persistence.OneToOne;
+
 public class Language {
-	private Integer idLanguage;
 	private String language;
+	private List<User> users;
+
+	public Language(String language, List<User> users) {
+		super();
+		this.language = language;
+		this.users = users;
+	}
 
 	public Language() {
 		super();
 	}
 
-	public Language(Integer idLanguage, String language) {
+	public Language( String language) {
 		super();
-		this.idLanguage = idLanguage;
 		this.language = language;
-	}
-
-	public Integer getIdLanguage() {
-		return idLanguage;
-	}
-
-	public void setIdLanguage(Integer idLanguage) {
-		this.idLanguage = idLanguage;
 	}
 
 	public String getLanguage() {
@@ -30,9 +31,15 @@ public class Language {
 		this.language = language;
 	}
 
-	@Override
-	public String toString() {
-		return "Language [idLanguage=" + idLanguage + ", language=" + language + "]";
+	@OneToOne
+	public List<User> getUsers() {
+		return users;
 	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	
 
 }

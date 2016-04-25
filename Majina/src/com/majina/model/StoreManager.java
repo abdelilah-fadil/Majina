@@ -5,45 +5,34 @@ import java.util.List;
 
 public class StoreManager extends User {
 
-	private Integer idManager;
 	private String rib;
 	private String codeSwift;
+	private List<Store> stores;
 
 	public StoreManager(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday,
 			String sexe, String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
 			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<Research> researches, List<Media> medias,
-			List<Claim> claims, Integer idManager, String rib, String codeSwift) {
+			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches) {
 		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
 				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches, medias, claims);
-		this.idManager = idManager;
-		this.rib = rib;
-		this.codeSwift = codeSwift;
+				researches);
 	}
 
 	public StoreManager() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public StoreManager(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday,
 			String sexe, String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
 			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<Research> researches, List<Media> medias,
-			List<Claim> claims) {
+			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches, String rib,
+			String codeSwift, List<Store> stores) {
 		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
 				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches, medias, claims);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Integer getIdManager() {
-		return idManager;
-	}
-
-	public void setIdManager(Integer idManager) {
-		this.idManager = idManager;
+				researches);
+		this.rib = rib;
+		this.codeSwift = codeSwift;
+		this.stores = stores;
 	}
 
 	public String getRib() {
@@ -62,9 +51,17 @@ public class StoreManager extends User {
 		this.codeSwift = codeSwift;
 	}
 
+	public List<Store> getStores() {
+		return stores;
+	}
+
+	public void setStores(List<Store> stores) {
+		this.stores = stores;
+	}
+
 	@Override
 	public String toString() {
-		return "StoreManager [idManager=" + idManager + ", rib=" + rib + ", codeSwift=" + codeSwift + "]";
+		return "StoreManager [rib=" + rib + ", codeSwift=" + codeSwift + ", stores=" + stores + "]";
 	}
 
 }

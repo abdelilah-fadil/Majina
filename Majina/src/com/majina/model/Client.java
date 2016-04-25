@@ -5,44 +5,21 @@ import java.util.List;
 
 public class Client extends User {
 
-	private Integer idClient;
 	private List<Commande> commandes;
 	private List<Group> groups;
+	private List<Claim> claims;
 
 	public Client(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday, String sexe,
 			String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
 			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<Research> researches, List<Media> medias,
-			List<Claim> claims, Integer idClient, List<Commande> commandes, List<Group> groups) {
+			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches) {
 		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
 				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches, medias, claims);
-		this.idClient = idClient;
-		this.commandes = commandes;
-		this.groups = groups;
+				researches);
 	}
 
 	public Client() {
 		super();
-	}
-
-	public Client(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday, String sexe,
-			String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
-			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<Research> researches, List<Media> medias,
-			List<Claim> claims) {
-		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
-				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches, medias, claims);
-
-	}
-
-	public Integer getIdClient() {
-		return idClient;
-	}
-
-	public void setIdClient(Integer idClient) {
-		this.idClient = idClient;
 	}
 
 	public List<Commande> getCommandes() {
@@ -61,9 +38,17 @@ public class Client extends User {
 		this.groups = groups;
 	}
 
+	public List<Claim> getClaims() {
+		return claims;
+	}
+
+	public void setClaims(List<Claim> claims) {
+		this.claims = claims;
+	}
+
 	@Override
 	public String toString() {
-		return "Client [idClient=" + idClient + ", commandes=" + commandes + ", groups=" + groups + "]";
+		return "Client [commandes=" + commandes + ", groups=" + groups + "]";
 	}
 
 }

@@ -10,22 +10,26 @@ public class Group {
 	private Date dateCrea;
 	private Date dateUp;
 	private List<Client> members;
-	private List<Client> groupAdmins;
+	private Boolean IsAdmin;
 
 	public Group() {
 		super();
 	}
 
+	
+
 	public Group(Integer idGroupe, String groupName, Date dateCrea, Date dateUp, List<Client> members,
-			List<Client> groupAdmins) {
+			Boolean isAdmin) {
 		super();
 		this.idGroupe = idGroupe;
 		this.groupName = groupName;
 		this.dateCrea = dateCrea;
 		this.dateUp = dateUp;
 		this.members = members;
-		this.groupAdmins = groupAdmins;
+		IsAdmin = isAdmin;
 	}
+
+
 
 	public Integer getIdGroupe() {
 		return idGroupe;
@@ -67,18 +71,18 @@ public class Group {
 		this.members = members;
 	}
 
-	public List<Client> getGroupAdmins() {
-		return groupAdmins;
+	public Boolean getIsAdmin() {
+		return IsAdmin;
 	}
 
-	public void setGroupAdmins(List<Client> groupAdmins) {
-		this.groupAdmins = groupAdmins;
+	public void setIsAdmin(Boolean isAdmin) {
+		IsAdmin = isAdmin;
 	}
 
 	@Override
 	public String toString() {
 		return "Group [idGroupe=" + idGroupe + ", groupName=" + groupName + ", dateCrea=" + dateCrea + ", dateUp="
-				+ dateUp + ", members=" + members + ", groupAdmins=" + groupAdmins + "]";
+				+ dateUp + ", members=" + members + "]";
 	}
 
 }

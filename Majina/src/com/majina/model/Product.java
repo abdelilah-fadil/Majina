@@ -9,26 +9,24 @@ public class Product {
 	private String designation;
 	private String description;
 	private String preference;
-	// prix hors taxes
+	// price TTC
 	private Float price;
 	private Integer stock;
 	private Float poids;
 	private Date dateCrea;
 	private Date dateUp;
 	private Store store;
-	private TVA tva;
-	private List<Categorie> catagories;
+	private Category catagory;
 	private List<Tag> tags;
 	private List<Promotion> promotions;
 
 	public Product() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Product(Integer idProduit, Date dateEntrance, String designation, String description, String preference,
-			Float price, Integer stock, Float poids, Date dateCrea, Date dateUp, Store store, TVA tva,
-			List<Categorie> catagories, List<Tag> tags, List<Promotion> promotions) {
+			Float price, Integer stock, Float poids, Date dateCrea, Date dateUp, Store store, Category catagory,
+			List<Tag> tags, List<Promotion> promotions) {
 		super();
 		this.idProduit = idProduit;
 		this.dateEntrance = dateEntrance;
@@ -41,8 +39,7 @@ public class Product {
 		this.dateCrea = dateCrea;
 		this.dateUp = dateUp;
 		this.store = store;
-		this.tva = tva;
-		this.catagories = catagories;
+		this.catagory = catagory;
 		this.tags = tags;
 		this.promotions = promotions;
 	}
@@ -135,20 +132,12 @@ public class Product {
 		this.store = store;
 	}
 
-	public TVA getTva() {
-		return tva;
+	public Category getCatagory() {
+		return catagory;
 	}
 
-	public void setTva(TVA tva) {
-		this.tva = tva;
-	}
-
-	public List<Categorie> getCatagories() {
-		return catagories;
-	}
-
-	public void setCatagories(List<Categorie> catagories) {
-		this.catagories = catagories;
+	public void setCatagories(Category catagory) {
+		this.catagory = catagory;
 	}
 
 	public List<Tag> getTags() {
@@ -172,7 +161,7 @@ public class Product {
 		return "Product [idProduit=" + idProduit + ", dateEntrance=" + dateEntrance + ", designation=" + designation
 				+ ", description=" + description + ", preference=" + preference + ", price=" + price + ", stock="
 				+ stock + ", poids=" + poids + ", dateCrea=" + dateCrea + ", dateUp=" + dateUp + ", store=" + store
-				+ ", tva=" + tva + ", catagories=" + catagories + ", tags=" + tags + ", promotions=" + promotions + "]";
+				+ ", catagories=" + catagory + ", tags=" + tags + ", promotions=" + promotions + "]";
 	}
 
 }
