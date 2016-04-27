@@ -1,24 +1,55 @@
 package com.majina.model;
 
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.OneToOne;
-
+@Entity
+@Table(name = "language")
 public class Language {
-	private String language;
-	private List<User> users;
 
-	public Language(String language, List<User> users) {
-		super();
-		this.language = language;
-		this.users = users;
-	}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idLanguage")
+	private Integer idLanguage;
+
+	@Column(name = "language")
+	private String language;
+
+	@Column(name = "codeLanguage")
+	private String codeLanguage;
 
 	public Language() {
 		super();
 	}
 
-	public Language( String language) {
+	public Integer getIdLanguage() {
+		return idLanguage;
+	}
+
+	public void setIdLanguage(Integer idLanguage) {
+		this.idLanguage = idLanguage;
+	}
+
+	public String getCodeLanguage() {
+		return codeLanguage;
+	}
+
+	public void setCodeLanguage(String codeLanguage) {
+		this.codeLanguage = codeLanguage;
+	}
+
+	public Language(Integer idLanguage, String language, String codeLanguage) {
+		super();
+		this.idLanguage = idLanguage;
+		this.language = language;
+		this.codeLanguage = codeLanguage;
+	}
+
+	public Language(String language) {
 		super();
 		this.language = language;
 	}
@@ -30,16 +61,5 @@ public class Language {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-
-	@OneToOne
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-	
-	
 
 }

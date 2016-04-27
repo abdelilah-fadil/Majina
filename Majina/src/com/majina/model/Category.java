@@ -1,43 +1,50 @@
 package com.majina.model;
 
 import java.sql.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "category")
 public class Category {
-	private Integer idCategorie;
-	private String categorie;
-	private Date dateCrea;
-	private Date dateUp;
-	private Category categorieM;
-	private List<Product> products;
 
-	public Category(Integer idCategorie, String categorie, Date dateCrea, Date dateUp, Category categorieM,
-			List<Product> products) {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idCategorie")
+	private Integer idCategorie;
+
+	@Column(name = "categorie")
+	private String categorie;
+
+	@Column(name = "dateCrea")
+	private Date dateCrea;
+
+	@Column(name = "dateUp")
+	private Date dateUp;
+
+	@OneToOne
+	@JoinColumn(name = "idCategorie")
+	private Category categorieM;
+
+	public Category(Integer idCategorie, String categorie, Date dateCrea, Date dateUp, Category categorieM) {
 		super();
 		this.idCategorie = idCategorie;
 		this.categorie = categorie;
 		this.dateCrea = dateCrea;
 		this.dateUp = dateUp;
 		this.categorieM = categorieM;
-		this.products = products;
 	}
 
 	public Category() {
 		super();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdCategorie() {
 		return idCategorie;
 	}
@@ -70,8 +77,6 @@ public class Category {
 		this.dateUp = dateUp;
 	}
 
-	@OneToOne
-	@JoinColumn(name = "CATEGORIE_MERE")
 	public Category getCategorieM() {
 		return categorieM;
 	}
@@ -80,19 +85,10 @@ public class Category {
 		this.categorieM = categorieM;
 	}
 
-	@ManyToOne(cascade = CascadeType.MERGE)
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
 	@Override
 	public String toString() {
 		return "Categorie [idCategorie=" + idCategorie + ", categorie=" + categorie + ", dateCrea=" + dateCrea
-				+ ", dateUp=" + dateUp + ", categorieM=" + categorieM + ", products=" + products + "]";
+				+ ", dateUp=" + dateUp + ", categorieM=" + categorieM + "]";
 	}
 
 }

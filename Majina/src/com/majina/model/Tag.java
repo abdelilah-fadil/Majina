@@ -1,21 +1,34 @@
 package com.majina.model;
 
 import java.sql.Date;
-import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tag")
 public class Tag {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idTag")
 	private Integer idTag;
+	
+	@Column(name = "tag")
 	private String tag;
+	
+	@Column(name = "dateCrea")
 	private Date dateCrea;
-	private List<Product> products;
 
-	public Tag(Integer idTag, String tag, Date dateCrea, List<Product> products) {
+	public Tag(Integer idTag, String tag, Date dateCrea) {
 		super();
 		this.idTag = idTag;
 		this.tag = tag;
 		this.dateCrea = dateCrea;
-		this.products = products;
 	}
 
 	public Tag() {
@@ -44,14 +57,6 @@ public class Tag {
 
 	public void setDateCrea(Date dateCrea) {
 		this.dateCrea = dateCrea;
-	}
-
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
 	}
 
 	@Override

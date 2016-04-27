@@ -1,13 +1,36 @@
 package com.majina.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "commandeLigne")
 public class CommandeLigne {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idCommandeLigne")
+	private Integer idCommandeLigne;
+	
+	@Column(name = "quantity")
 	private Integer quantity;
+	
+	@OneToOne
+	@JoinColumn(name = "idCommande")
 	private Commande commande;
+	
+	@OneToOne
+	@JoinColumn(name = "idProduit")
 	private Product product;
 
 	public CommandeLigne() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public CommandeLigne(Integer quantity, Commande commande, Product product) {

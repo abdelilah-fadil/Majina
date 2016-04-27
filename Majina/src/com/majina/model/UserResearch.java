@@ -2,25 +2,37 @@ package com.majina.model;
 
 import java.sql.Date;
 
-import javax.persistence.OneToMany;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "userresearch")
 public class UserResearch {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idResearch")
 	private Integer idResearch;
+	
+	@Column(name = "researchValue")
 	private String researchValue;
+	
+	@Column(name = "dateResearch")
 	private Date dateResearch;
-	private User user;
 
 	public UserResearch() {
 		super();
 	}
 
-	public UserResearch(Integer idResearch, String researchValue, Date dateResearch, User user) {
+	public UserResearch(Integer idResearch, String researchValue, Date dateResearch) {
 		super();
 		this.idResearch = idResearch;
 		this.researchValue = researchValue;
 		this.dateResearch = dateResearch;
-		this.user = user;
 	}
 
 	public Integer getIdResearch() {
@@ -47,19 +59,11 @@ public class UserResearch {
 		this.dateResearch = dateResearch;
 	}
 
-	@OneToMany
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	@Override
 	public String toString() {
 		return "Research [idResearch=" + idResearch + ", researchValue=" + researchValue + ", dateResearch="
-				+ dateResearch + ", user=" + user + "]";
+				+ dateResearch + "]";
 	}
 
 }

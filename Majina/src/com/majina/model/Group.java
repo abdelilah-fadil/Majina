@@ -3,40 +3,62 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "group")
 public class Group {
 
-	private Integer idGroupe;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idGroup")
+	private Integer idGroup;
+	
+	@Column(name = "groupName")
 	private String groupName;
+	
+	@Column(name = "dateCrea")
 	private Date dateCrea;
-	private Date dateUp;
+	
+	@Column(name = "dateMaj")
+	private Date dateMaj;
+	
+	@ManyToMany(mappedBy="groups")
 	private List<Client> members;
+	
+	@Column(name = "IsAdmin")
 	private Boolean IsAdmin;
 
 	public Group() {
-		super();
 	}
 
 	
 
-	public Group(Integer idGroupe, String groupName, Date dateCrea, Date dateUp, List<Client> members,
+	public Group(Integer idGroup, String groupName, Date dateCrea, Date dateUp, List<Client> members,
 			Boolean isAdmin) {
 		super();
-		this.idGroupe = idGroupe;
+		this.idGroup = idGroup;
 		this.groupName = groupName;
 		this.dateCrea = dateCrea;
-		this.dateUp = dateUp;
+		this.dateMaj = dateUp;
 		this.members = members;
 		IsAdmin = isAdmin;
 	}
 
 
 
-	public Integer getIdGroupe() {
-		return idGroupe;
+	public Integer getIdGroup() {
+		return idGroup;
 	}
 
-	public void setIdGroupe(Integer idGroupe) {
-		this.idGroupe = idGroupe;
+	public void setIdGroup(Integer idgroup) {
+		this.idGroup = idgroup;
 	}
 
 	public String getGroupName() {
@@ -56,11 +78,11 @@ public class Group {
 	}
 
 	public Date getDateUp() {
-		return dateUp;
+		return dateMaj;
 	}
 
 	public void setDateUp(Date dateUp) {
-		this.dateUp = dateUp;
+		this.dateMaj = dateUp;
 	}
 
 	public List<Client> getMembers() {
@@ -81,8 +103,8 @@ public class Group {
 
 	@Override
 	public String toString() {
-		return "Group [idGroupe=" + idGroupe + ", groupName=" + groupName + ", dateCrea=" + dateCrea + ", dateUp="
-				+ dateUp + ", members=" + members + "]";
+		return "Group [idgroup=" + idGroup + ", groupName=" + groupName + ", dateCrea=" + dateCrea + ", dateUp="
+				+ dateMaj + ", members=" + members + "]";
 	}
 
 }

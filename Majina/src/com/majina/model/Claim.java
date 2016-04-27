@@ -2,26 +2,44 @@ package com.majina.model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "claim")
 public class Claim {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idClaim")
 	private Integer idClaim;
+	
+	@Column(name = "claim")
 	private String claim;
+	
+	@Column(name = "dateClaim")
 	private Date dateClaim;
+	
+	@Column(name = "reply")
 	private String reply;
-	private Client client;
+
+	@ManyToOne
+	@JoinColumn(name = "idProduit")
 	private Product produit;
 
 	public Claim() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Claim(Integer idClaim, String claim, Date dateClaim, String reply, Client client, Product produit) {
-		super();
+	public Claim(Integer idClaim, String claim, Date dateClaim, String reply, Product produit) {
 		this.idClaim = idClaim;
 		this.claim = claim;
 		this.dateClaim = dateClaim;
 		this.reply = reply;
-		this.client = client;
 		this.produit = produit;
 	}
 
@@ -57,14 +75,6 @@ public class Claim {
 		this.reply = reply;
 	}
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client user) {
-		this.client = user;
-	}
-
 	public Product getProduit() {
 		return produit;
 	}
@@ -76,7 +86,7 @@ public class Claim {
 	@Override
 	public String toString() {
 		return "Claim [idClaim=" + idClaim + ", claim=" + claim + ", dateClaim=" + dateClaim + ", reply=" + reply
-				+ ", user=" + client + ", produit=" + produit + "]";
+				+ ", produit=" + produit + "]";
 	}
 
 }

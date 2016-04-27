@@ -1,36 +1,47 @@
 package com.majina.model;
 
-import java.util.List;
 import java.util.TimeZone;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "city")
 public class City {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idCity")
 	private Integer idCity;
+	
+	@Column(name = "city")
 	private String city;
+	
+	@Column(name = "timeZone")
 	private TimeZone timeZone;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCountry")
 	private Country country;
-	private List<User> users;
 
-	public City(Integer idCity, String city, TimeZone timeZone, Country country, List<User> users) {
+	public City(Integer idCity, String city, TimeZone timeZone, Country country) {
 		super();
 		this.idCity = idCity;
 		this.city = city;
 		this.timeZone = timeZone;
 		this.country = country;
-		this.users = users;
 	}
 
 	public City() {
 		super();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdCity() {
 		return idCity;
 	}
@@ -61,15 +72,6 @@ public class City {
 
 	public void setCountry(Country country) {
 		this.country = country;
-	}
-
-	@OneToMany
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
 	}
 
 	@Override

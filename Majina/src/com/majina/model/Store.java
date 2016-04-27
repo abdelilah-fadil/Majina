@@ -3,14 +3,43 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 public class Store {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idStore")
 	private Integer idStore;
+
+	@Column(name = "storeName")
 	private String storeName;
+
+	@Column(name = "dateCrea")
 	private Date dateCrea;
+
+	@Column(name = "dateUp")
 	private Date dateUp;
+
+	@OneToMany
+	@JoinTable(name = "storeSellers", joinColumns = { @JoinColumn(name = "idStore") }, inverseJoinColumns = {
+			@JoinColumn(name = "idSeller") })
 	private List<Seller> sellers;
+
+	@OneToMany
+	@JoinTable(name = "storeProducts", joinColumns = { @JoinColumn(name = "idStore") }, inverseJoinColumns = {
+			@JoinColumn(name = "idProduit") })
 	private List<Product> products;
+	
+	@ManyToOne
+	@JoinColumn(name = "idRole")
 	private StoreManager storeManager;
 
 	public Store() {

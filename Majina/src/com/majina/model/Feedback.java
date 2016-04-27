@@ -2,25 +2,37 @@ package com.majina.model;
 
 import java.sql.Date;
 
-import javax.persistence.OneToMany;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "feedback")
 public class Feedback {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idFeedback")
 	private Integer idFeedback;
+
+	@Column(name = "feedback")
 	private String feedback;
+
+	@Column(name = "dateFeedback")
 	private Date dateFeedback;
-	private User user;
 
 	public Feedback() {
 		super();
 	}
 
-	public Feedback(Integer idFeedback, String feedback, Date dateFeedback, User user) {
+	public Feedback(Integer idFeedback, String feedback, Date dateFeedback) {
 		super();
 		this.idFeedback = idFeedback;
 		this.feedback = feedback;
 		this.dateFeedback = dateFeedback;
-		this.user = user;
 	}
 
 	public Integer getIdFeedback() {
@@ -45,15 +57,6 @@ public class Feedback {
 
 	public void setDateFeedback(Date dateFeedback) {
 		this.dateFeedback = dateFeedback;
-	}
-
-	@OneToMany
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	@Override

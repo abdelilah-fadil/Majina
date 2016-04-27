@@ -3,33 +3,52 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "storemanager")
+@PrimaryKeyJoinColumn(name = "idManager", referencedColumnName = "idUser")
 public class StoreManager extends User {
 
+	@Column(name = "rib")
 	private String rib;
-	private String codeSwift;
-	private List<Store> stores;
 
-	public StoreManager(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday,
-			String sexe, String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
-			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches) {
-		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
-				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches);
-	}
+	@Column(name = "codeSwift")
+	private String codeSwift;
+
+	@OneToMany
+	@JoinTable(name = "managerStores", joinColumns = { @JoinColumn(name = "idManager") }, inverseJoinColumns = {
+			@JoinColumn(name = "idStore") })
+	private List<Store> stores;
 
 	public StoreManager() {
 		super();
 	}
 
 	public StoreManager(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday,
-			String sexe, String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
-			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
-			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches, String rib,
-			String codeSwift, List<Store> stores) {
-		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, role, dateRegistration, adress_1,
-				adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks, loginHistories,
-				researches);
+			String sexe, String email, String pwd, Role defaultRole, Date dateRegistration, String adress_1,
+			String adress_2, Integer zipcode, String telephoneFixe, String telephoneMobile, City city,
+			Language defaultLanguage, List<Feedback> feedbacks, List<LoginHist> loginHistories,
+			List<UserResearch> researches) {
+		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, defaultRole, dateRegistration,
+				adress_1, adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks,
+				loginHistories, researches);
+	}
+
+	public StoreManager(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday,
+			String sexe, String email, String pwd, Role defaultRole, Date dateRegistration, String adress_1,
+			String adress_2, Integer zipcode, String telephoneFixe, String telephoneMobile, City city,
+			Language defaultLanguage, List<Feedback> feedbacks, List<LoginHist> loginHistories,
+			List<UserResearch> researches, String rib, String codeSwift, List<Store> stores) {
+		super(idUser, fisrtName, middleName, lastName, birthday, sexe, email, pwd, defaultRole, dateRegistration,
+				adress_1, adress_2, zipcode, telephoneFixe, telephoneMobile, city, defaultLanguage, feedbacks,
+				loginHistories, researches);
 		this.rib = rib;
 		this.codeSwift = codeSwift;
 		this.stores = stores;

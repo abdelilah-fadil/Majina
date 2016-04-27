@@ -1,6 +1,7 @@
 package com.majina.model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Promotion {
 
@@ -9,19 +10,24 @@ public class Promotion {
 	private String codePromo;
 	private Date dateCrea;
 	private Date dateUp;
+	private List<Product> products;
 
 	public Promotion() {
 		super();
 	}
 
-	public Promotion(Integer idPromotion, String libPromo, String codePromo, Date dateCrea, Date dateUp) {
+	public Promotion(Integer idPromotion, String libPromo, String codePromo, Date dateCrea, Date dateUp,
+			List<Product> products) {
 		super();
 		this.idPromotion = idPromotion;
 		this.libPromo = libPromo;
 		this.codePromo = codePromo;
 		this.dateCrea = dateCrea;
 		this.dateUp = dateUp;
+		this.products = products;
 	}
+
+
 
 	public Integer getIdPromotion() {
 		return idPromotion;
@@ -61,6 +67,14 @@ public class Promotion {
 
 	public void setDateUp(Date dateUp) {
 		this.dateUp = dateUp;
+	}
+	
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 	@Override

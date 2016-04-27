@@ -3,39 +3,96 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idUser")
 	private Integer idUser;
+
+	@Column(name = "fisrtName", nullable = true)
 	private String fisrtName;
+
+	@Column(name = "middleName", nullable = true)
 	private String middleName;
+
+	@Column(name = "lastName", nullable = true)
 	private String lastName;
+
+	@Column(name = "birthday", nullable = true)
 	private Date birthday;
+
+	@Column(name = "sexe", nullable = true)
 	private String sexe;
+
+	@Column(name = "email", nullable = true)
 	private String email;
+
+	@Column(name = "pwd", nullable = true)
 	private String pwd;
-	private String defaultRole;
+
+	@ManyToOne
+	@JoinColumn(name = "idRole")
+	private Role defaultRole;
+
+	@Column(name = "dateRegistration", nullable = true)
 	private Date dateRegistration;
+
+	@Column(name = "adress_1", nullable = true)
 	private String adress_1;
+
+	@Column(name = "adress_2", nullable = true)
 	private String adress_2;
+
+	@Column(name = "zipcode", nullable = true)
 	private Integer zipcode;
+
+	@Column(name = "telephoneFixe", nullable = true)
 	private String telephoneFixe;
+
+	@Column(name = "telephoneMobile", nullable = true)
 	private String telephoneMobile;
+
+	@Column(name = "city", nullable = true)
 	private City city;
+
+	@ManyToOne
+	@JoinColumn(name = "idLanguage")
 	private Language defaultLanguage;
+
+	@OneToMany
+	@JoinTable(name = "userFeedbacks", joinColumns = { @JoinColumn(name = "idUser") }, inverseJoinColumns = {
+			@JoinColumn(name = "idFeedback") })
 	private List<Feedback> feedbacks;
+	@OneToMany
+	@JoinTable(name = "userLoginHistories", joinColumns = { @JoinColumn(name = "idUser") }, inverseJoinColumns = {
+			@JoinColumn(name = "idLoginHist") })
 	private List<LoginHist> loginHistories;
+
+	@OneToMany
+	@JoinTable(name = "userResearchHistories", joinColumns = { @JoinColumn(name = "idUser") }, inverseJoinColumns = {
+			@JoinColumn(name = "idResearch") })
 	private List<UserResearch> researches;
 
 	public User(Integer idUser, String fisrtName, String middleName, String lastName, Date birthday, String sexe,
-			String email, String pwd, String role, Date dateRegistration, String adress_1, String adress_2,
+			String email, String pwd, Role defaultRole, Date dateRegistration, String adress_1, String adress_2,
 			Integer zipcode, String telephoneFixe, String telephoneMobile, City city, Language defaultLanguage,
 			List<Feedback> feedbacks, List<LoginHist> loginHistories, List<UserResearch> researches) {
 		super();
@@ -47,7 +104,7 @@ public class User {
 		this.sexe = sexe;
 		this.email = email;
 		this.pwd = pwd;
-		this.defaultRole = role;
+		this.defaultRole = defaultRole;
 		this.dateRegistration = dateRegistration;
 		this.adress_1 = adress_1;
 		this.adress_2 = adress_2;
@@ -62,11 +119,8 @@ public class User {
 	}
 
 	public User() {
-		super();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdUser() {
 		return idUser;
 	}
@@ -131,12 +185,12 @@ public class User {
 		this.pwd = pwd;
 	}
 
-	public String getRole() {
+	public Role getDefaultRole() {
 		return defaultRole;
 	}
 
-	public void setRole(String role) {
-		this.defaultRole = role;
+	public void setDefaultRole(Role defaultRole) {
+		this.defaultRole = defaultRole;
 	}
 
 	public Date getDateRegistration() {

@@ -2,35 +2,48 @@ package com.majina.model;
 
 import java.sql.Date;
 
-import javax.persistence.OneToMany;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "loginhist")
 public class LoginHist {
 
-	private Integer idLogin;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idLoginHist")
+	private Integer idLoginHist;
+
+	@Column(name = "dateLogin")
 	private Date dateLogin;
+
+	@Column(name = "IPAdress")
 	private String IPAdress;
+
+	@Column(name = "sessionDetail")
 	private String sessionDetail;
-	private User user;
 
 	public LoginHist() {
-		super();
 	}
 
-	public LoginHist(Integer idLogin, Date dateLogin, String iPAdress, String sessionDetail, User user) {
+	public LoginHist(Integer idLoginHist, Date dateLogin, String iPAdress, String sessionDetail) {
 		super();
-		this.idLogin = idLogin;
+		this.idLoginHist = idLoginHist;
 		this.dateLogin = dateLogin;
 		IPAdress = iPAdress;
 		this.sessionDetail = sessionDetail;
-		this.user = user;
 	}
 
 	public Integer getIdLogin() {
-		return idLogin;
+		return idLoginHist;
 	}
 
 	public void setIdLogin(Integer idLogin) {
-		this.idLogin = idLogin;
+		this.idLoginHist = idLogin;
 	}
 
 	public Date getDateLogin() {
@@ -57,18 +70,9 @@ public class LoginHist {
 		this.sessionDetail = sessionDetail;
 	}
 
-	@OneToMany
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
-		return "LoginHist [idLogin=" + idLogin + ", dateLogin=" + dateLogin + ", IPAdress=" + IPAdress
+		return "LoginHist [idLogin=" + idLoginHist + ", dateLogin=" + dateLogin + ", IPAdress=" + IPAdress
 				+ ", sessionDetail=" + sessionDetail + "]";
 	}
 

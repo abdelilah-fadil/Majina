@@ -2,10 +2,31 @@ package com.majina.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "zone")
 public class Zone {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idZone")
 	private Integer idZone;
+	
+	@Column(name = "zone")
 	private String zone;
+	
+	@OneToMany
+	@JoinTable(name = "zoneCountries", joinColumns = { @JoinColumn(name = "idZone") }, inverseJoinColumns = {
+			@JoinColumn(name = "idCountry") })
 	private List<Country> countries;
 
 	public Zone() {
@@ -18,8 +39,6 @@ public class Zone {
 		this.zone = zone;
 		this.countries = countries;
 	}
-
-
 
 	public Integer getIdZone() {
 		return idZone;

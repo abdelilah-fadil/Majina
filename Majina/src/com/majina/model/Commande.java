@@ -3,29 +3,50 @@ package com.majina.model;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "commande")
 public class Commande {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idCommande")
 	private Integer idCommande;
+
+	@Column(name = "dateCmd", nullable = true)
 	private Date dateCmd;
+
+	@Column(name = "status", nullable = true)
 	private String status;
-	private Client client;
+
+	@OneToOne
+	@JoinColumn(name = "idBill")
 	private Bill bill;
+
+	@OneToMany
+	@JoinTable(name = "commandeLignes", joinColumns = { @JoinColumn(name = "idCommande") }, inverseJoinColumns = {
+			@JoinColumn(name = "idCommandeLigne") })
 	private List<CommandeLigne> commandeLignes;
 
 	public Commande() {
 		super();
 	}
 
-	public Commande(Integer idCommande, Date dateCmd, String status, Client client, Bill bill,
-			List<CommandeLigne> commandeLignes) {
+	public Commande(Integer idCommande, Date dateCmd, String status, Bill bill, List<CommandeLigne> commandeLignes) {
 		super();
 		this.idCommande = idCommande;
 		this.dateCmd = dateCmd;
 		this.status = status;
-		this.client = client;
 		this.bill = bill;
 		this.commandeLignes = commandeLignes;
 	}
@@ -54,15 +75,6 @@ public class Commande {
 		this.status = status;
 	}
 
-	public Client getClient() {
-		return client;
-	}
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-	@OneToOne
 	public Bill getBill() {
 		return bill;
 	}
@@ -82,8 +94,7 @@ public class Commande {
 
 	@Override
 	public String toString() {
-		return "Commande [idCommande=" + idCommande + ", dateCmd=" + dateCmd + ", status=" + status + ", client="
-				+ client + "]";
+		return "Commande [idCommande=" + idCommande + ", dateCmd=" + dateCmd + ", status=" + status + "]";
 	}
 
 }
