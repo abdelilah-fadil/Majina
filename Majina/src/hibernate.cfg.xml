@@ -21,29 +21,22 @@
 		<mapping class="com.majina.model.Claim"/>
 		<mapping class="com.majina.model.Client"/>
 		<mapping class="com.majina.model.Commande"/>
-		<mapping class="com.majina.model.CommandeDetails"/>
+		<mapping class="com.majina.model.CommandeLigne"/>
 		<mapping class="com.majina.model.Country"/>
 		<mapping class="com.majina.model.Feedback"/>
 		<mapping class="com.majina.model.Group"/>
 		<mapping class="com.majina.model.Language"/>
 		<mapping class="com.majina.model.LoginHist"/>
-		<mapping class="com.majina.model.Media"/>
 		<mapping class="com.majina.model.Moderator"/>
-		<mapping class="com.majina.model.Payement"/>
 		<mapping class="com.majina.model.Product"/>
-		<mapping class="com.majina.model.ProductTag"/>
-		<mapping class="com.majina.model.Promote"/>
 		<mapping class="com.majina.model.Promotion"/>
-		<mapping class="com.majina.model.Research"/>
+		<mapping class="com.majina.model.Role"/>
 		<mapping class="com.majina.model.Seller"/>
-		<mapping class="com.majina.model.Shipper"/>
-		<mapping class="com.majina.model.Shippment"/>
-		<mapping class="com.majina.model.State"/>
 		<mapping class="com.majina.model.Store"/>
 		<mapping class="com.majina.model.StoreManager"/>
 		<mapping class="com.majina.model.Tag"/>
-		<mapping class="com.majina.model.TVA"/>
 		<mapping class="com.majina.model.User"/>
+		<mapping class="com.majina.model.UserResearch"/>
 		<mapping class="com.majina.model.Zone"/>
 	</session-factory>
 </hibernate-configuration>
