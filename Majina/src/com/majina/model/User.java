@@ -70,7 +70,8 @@ public class User {
 	@Column(name = "telephoneMobile", nullable = true)
 	private String telephoneMobile;
 
-	@Column(name = "city", nullable = true)
+	@ManyToOne
+	@JoinColumn(name = "idCity")
 	private City city;
 
 	@ManyToOne

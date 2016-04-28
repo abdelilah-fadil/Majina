@@ -52,11 +52,11 @@ public class Product {
 	private Date dateUp;
 
 	@ManyToOne
-	@JoinColumn(name = "idRole")
+	@JoinColumn(name = "idStore")
 	private Store store;
 
 	@ManyToOne
-	@JoinColumn(name = "idRole")
+	@JoinColumn(name = "idCategory")
 	private Category catagory;
 
 	@ManyToMany

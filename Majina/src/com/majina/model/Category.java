@@ -16,11 +16,11 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "idCategorie")
-	private Integer idCategorie;
+	@Column(name = "idCategory")
+	private Integer idCategory;
 
-	@Column(name = "categorie")
-	private String categorie;
+	@Column(name = "Category")
+	private String Category;
 
 	@Column(name = "dateCrea")
 	private Date dateCrea;
@@ -29,36 +29,36 @@ public class Category {
 	private Date dateUp;
 
 	@OneToOne
-	@JoinColumn(name = "idCategorie")
-	private Category categorieM;
+	@JoinColumn(name = "idCategory")
+	private Category CategoryM;
 
-	public Category(Integer idCategorie, String categorie, Date dateCrea, Date dateUp, Category categorieM) {
+	public Category(Integer idCategory, String Category, Date dateCrea, Date dateUp, Category CategoryM) {
 		super();
-		this.idCategorie = idCategorie;
-		this.categorie = categorie;
+		this.idCategory = idCategory;
+		this.Category = Category;
 		this.dateCrea = dateCrea;
 		this.dateUp = dateUp;
-		this.categorieM = categorieM;
+		this.CategoryM = CategoryM;
 	}
 
 	public Category() {
 		super();
 	}
 
-	public Integer getIdCategorie() {
-		return idCategorie;
+	public Integer getidCategory() {
+		return idCategory;
 	}
 
-	public void setIdCategorie(Integer idCategorie) {
-		this.idCategorie = idCategorie;
+	public void setidCategory(Integer idCategory) {
+		this.idCategory = idCategory;
 	}
 
-	public String getCategorie() {
-		return categorie;
+	public String getCategory() {
+		return Category;
 	}
 
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
+	public void setCategory(String Category) {
+		this.Category = Category;
 	}
 
 	public Date getDateCrea() {
@@ -77,18 +77,18 @@ public class Category {
 		this.dateUp = dateUp;
 	}
 
-	public Category getCategorieM() {
-		return categorieM;
+	public Category getCategoryM() {
+		return CategoryM;
 	}
 
-	public void setCategorieM(Category categorieM) {
-		this.categorieM = categorieM;
+	public void setCategoryM(Category CategoryM) {
+		this.CategoryM = CategoryM;
 	}
 
 	@Override
 	public String toString() {
-		return "Categorie [idCategorie=" + idCategorie + ", categorie=" + categorie + ", dateCrea=" + dateCrea
-				+ ", dateUp=" + dateUp + ", categorieM=" + categorieM + "]";
+		return "Category [idCategory=" + idCategory + ", Category=" + Category + ", dateCrea=" + dateCrea
+				+ ", dateUp=" + dateUp + ", CategoryM=" + CategoryM + "]";
 	}
 
 }
