@@ -1,6 +1,480 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.majina.model.UserResearch" project="Majina" 
+    file="/Majina/src/com/majina/model/UserResearch.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="131" x="309" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.majina.model.Feedback" project="Majina" 
+    file="/Majina/src/com/majina/model/Feedback.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="122" x="480" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.majina.model.Moderator" project="Majina" 
+    file="/Majina/src/com/majina/model/Moderator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="28" width="83" x="642" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.majina.model.Tag" project="Majina" 
+    file="/Majina/src/com/majina/model/Tag.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="98" x="1632" y="784"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.majina.model.CommandeLigne" project="Majina" 
+    file="/Majina/src/com/majina/model/CommandeLigne.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="64" width="152" x="117" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.majina.model.Product" project="Majina" 
+    file="/Majina/src/com/majina/model/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="208" width="118" x="1701" y="536"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.majina.model.Category" project="Majina" 
+    file="/Majina/src/com/majina/model/Category.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="100" width="117" x="1770" y="784"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.majina.model.StoreManager" project="Majina" 
+    file="/Majina/src/com/majina/model/StoreManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="64" width="110" x="1691" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.majina.model.Bill" project="Majina" 
+    file="/Majina/src/com/majina/model/Bill.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="90" x="117" y="536"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.majina.model.Language" project="Majina" 
+    file="/Majina/src/com/majina/model/Language.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="132" x="765" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.majina.model.Seller" project="Majina" 
+    file="/Majina/src/com/majina/model/Seller.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="28" width="57" x="1594" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.majina.model.User" project="Majina" 
+    file="/Majina/src/com/majina/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="280" width="137" x="1101" y="-82"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.majina.model.LoginHist" project="Majina" 
+    file="/Majina/src/com/majina/model/LoginHist.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="100" width="124" x="937" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.majina.model.Role" project="Majina" 
+    file="/Majina/src/com/majina/model/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="64" width="94" x="1101" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.majina.model.Admin" project="Majina" 
+    file="/Majina/src/com/majina/model/Admin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="28" width="60" x="1235" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.majina.model.Claim" project="Majina" 
+    file="/Majina/src/com/majina/model/Claim.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="100" width="100" x="1701" y="378"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.majina.model.Client" project="Majina" 
+    file="/Majina/src/com/majina/model/Client.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="28" width="56" x="1498" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.majina.model.Commande" project="Majina" 
+    file="/Majina/src/com/majina/model/Commande.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="126" x="117" y="378"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.majina.model.City" project="Majina" 
+    file="/Majina/src/com/majina/model/City.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="123" x="1335" y="238"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.majina.model.Store" project="Majina" 
+    file="/Majina/src/com/majina/model/Store.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="100" width="112" x="1822" y="-82"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.majina.model.Group" project="Majina" 
+    file="/Majina/src/com/majina/model/Group.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="118" width="115" x="2045" y="378"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.majina.model.Zone" project="Majina" 
+    file="/Majina/src/com/majina/model/Zone.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="64" width="98" x="1883" y="536"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.majina.model.TestMapping" project="Majina" 
+    file="/Majina/src/com/majina/model/TestMapping.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="64" width="96" x="541" y="-82"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.majina.model.Country" project="Majina" 
+    file="/Majina/src/com/majina/model/Country.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="100" width="122" x="1883" y="378"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.majina.model.Promotion" project="Majina" 
+    file="/Majina/src/com/majina/model/Promotion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="118" width="120" x="1541" y="378"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <association id="26">    
+    <bendpoint x="918" y="378"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="27" name="product"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="30" name="defaultRole"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="33" name="country"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <bendpoint x="1852" y="378"/>    
+    <bendpoint x="1852" y="238"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="36" name="store"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="39" name="defaultLanguage"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="42">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="43" name="claims"/>      
+      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="46">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="47" name="feedbacks"/>      
+      <multiplicity id="48" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="49">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="50" name="stores"/>      
+      <multiplicity id="51" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="53" name="bill"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="56" name="commandeLignes"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="58">    
+    <bendpoint x="1831" y="238"/>    
+    <bendpoint x="1831" y="378"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="59" name="products"/>      
+      <multiplicity id="60" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="61">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="62" name="city"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="65" name="members"/>      
+      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="68" name="countries"/>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="71" name="zone"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="74" name="commande"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="77" name="sellers"/>      
+      <multiplicity id="78" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="80" name="commande"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="83" name="tags"/>      
+      <multiplicity id="84" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="85">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="86">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="87" name="commandes"/>      
+      <multiplicity id="88" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="89">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="90" name="CategoryM"/>      
+      <multiplicity id="91" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="92">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="93">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <association id="94">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="95" name="groups"/>      
+      <multiplicity id="96" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="97">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="98" name="researches"/>      
+      <multiplicity id="99" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="100">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="101" name="catagory"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="104" name="products"/>      
+      <multiplicity id="105" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="107" name="produit"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="110" name="storeManager"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="113" name="loginHistories"/>      
+      <multiplicity id="114" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="true" signature="false" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
